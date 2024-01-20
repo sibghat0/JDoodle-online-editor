@@ -1,0 +1,23 @@
+.gamification-container {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gamification-progress {
+  height: 20px;
+  transition: width 0.3s ease-in-out;
+}
+
+.gamification-info {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  line-height: 20px;
+}

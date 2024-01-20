@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import JDoodleContainer from "./containers/JDoodleContainer";
+import ContestPage from "./pages/contestPage/ContestPage";
+import Navbar from "./components/Navbar";
 
 function App() {
+  const [selectedQuestions, setSelectedQuestions] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            exact
+            element={
+              <JDoodleContainer
+                selectedQuestions={selectedQuestions}
+                setSelectedQuestions={setSelectedQuestions}
+              />
+            }
+          />
+          <Route
+            path="/contest"
+            exact
+            element={
+              <ContestPage
+                selectedQuestions={selectedQuestions}
+                setSelectedQuestions={setSelectedQuestions}
+              />
+            }
+          />
+        </Routes>
+      </Router>
     </div>
   );
 }
