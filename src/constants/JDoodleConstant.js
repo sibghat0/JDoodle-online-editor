@@ -9,6 +9,9 @@ export const clientData = {
     "315406e0bef3c3efaa9b2cad9238335a66241d3dadf54369141351ff42ed5880",
 };
 
+export const DropdownMenu = ["java", "cpp", "python3"];
+export const ColorDropdownMenu = ["vs-dark", "vs-light"];
+
 export const barColor = (value) => {
   return {
     red: {

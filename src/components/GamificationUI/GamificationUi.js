@@ -1,5 +1,5 @@
 import React from "react";
-import "./GamificationUi.css"; // Make sure to create this CSS file for styling
+import "./GamificationUi.css";
 import {
   dynamicBarColor,
   percentageCalculator,

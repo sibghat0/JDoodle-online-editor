@@ -24,3 +24,11 @@ export const dynamicBarColor = (value, totalValue) => {
       break;
   }
 };
+
+export const typeChecking = (type) => {
+  return isNaN(+type) ? type : JSON.stringify(type);
+};
+
+export const colorChange = (colorMode, colorChecker = "vs-light") => {
+  return colorMode === colorChecker ? "dark-background" : "light-background";
+};

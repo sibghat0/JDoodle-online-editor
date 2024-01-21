@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { submitProgramAPI } from "../../service/service.api";
 import { clientData } from "../../constants/JDoodleConstant";
+import { colorChange } from "../../utils/jDoodle.utils";
 
 export default function EditorOutput({ colorMode, script, codeLanguage }) {
   const [output, setOutput] = useState();
@@ -37,9 +38,7 @@ export default function EditorOutput({ colorMode, script, codeLanguage }) {
         }
         onKeyDown={handleInput}
         onChange={(e) => setOutput(e.target.value)}
-        className={
-          colorMode !== "vs-light" ? "dark-background" : "light-background"
-        }
+        className={colorChange(colorMode, "vs-dark")}
       />
     </div>
   );
