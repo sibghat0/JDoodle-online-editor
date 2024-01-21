@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import { useState } from "react";
 import { problems, selectingTypeConstant } from "../constants/JDoodleConstant";
-import Dropdown from "../components/Dropdown";
+import Dropdown from "../components/Dropdown/Dropdown";
 import homepage from "../assets/Homepage.webp";
 
 function JDoodleContainer({ selectedQuestions, setSelectedQuestions }) {

@@ -7,8 +7,8 @@ import {
   conditionalChecking,
   typeChecking,
 } from "../../utils/jDoodle.utils";
-import Dropdown from "../../components/Dropdown";
-import Loader from "../../components/Loader";
+import Dropdown from "../../components/Dropdown/Dropdown";
+import Loader from "../../components/Loader/Loader";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import EditorOutput from "../../components/EditorOutput/EditorOutput";
 import {
@@ -17,6 +17,7 @@ import {
   clientData,
 } from "../../constants/JDoodleConstant";
 import ResultPage from "../../components/ResultPage/ResultPage";
+import ProblemTab from "../../components/ProblemTab/ProblemTab";
 
 function ContestPage({ selectedQuestions, setSelectedQuestions }) {
   const [currentProblemIndex, setCurrentProblemIndex] = useState(0);
@@ -158,37 +159,10 @@ function ContestPage({ selectedQuestions, setSelectedQuestions }) {
                   </div>
                   <div className="contest-header">
                     {changeProblemTab ? (
-                      <div style={{ height: "100%", overflow: "auto" }}>
-                        <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                          }}
-                        >
-                          <h1>Problem {currentProblemIndex + 1}</h1>
-                          <h4>Diffculty Level : {currentProblem.diffcult}</h4>
-                        </div>
-                        <h3>{currentProblem.problemName}</h3>
-                        <p>{currentProblem.statement}</p>
-                        <div>
-                          <h4> Input Format</h4>
-                          <p>{currentProblem.inputFormat}</p>
-                        </div>
-                        <div>
-                          <h4> Output Format</h4>
-                          <p>{currentProblem.outputFormat}</p>
-                        </div>
-                        <div>
-                          <h4> Input </h4>
-                          <p>{currentProblem.testCases[0].input}</p>
-                        </div>
-                        <div>
-                          <h4> Output </h4>
-                          <p>
-                            {typeChecking(currentProblem.testCases[0].output)}
-                          </p>
-                        </div>
-                      </div>
+                      <ProblemTab
+                        currentProblem={currentProblem}
+                        currentProblemIndex={currentProblemIndex}
+                      />
                     ) : (
                       <div>
                         <h1>Solution</h1>
